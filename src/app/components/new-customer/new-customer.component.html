@@ -1,0 +1,49 @@
+<mat-card>
+  <mat-card-header>
+    New Customer
+  </mat-card-header>
+  <mat-card-content>
+    <form fxLayout="column">
+      <mat-form-field>
+        <input matInput placeholder="First Name" name="FName" [(ngModel)]='customer.firstname'>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Last Name" name="Lname" [(ngModel)]='customer.lastname'>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Phone Number" name="PhoneNumber" [(ngModel)]='customer.PhoneNum'>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Email" name="Email" [(ngModel)]='customer.email'>
+      </mat-form-field>
+    </form>
+    <div *ngIf="customerCreated">
+      <table class="table">
+        <thead>
+          <tr fxLayout="row">
+            <th fxFlex="20">First Name</th>
+            <th fxFlex="20">Last Name</th>
+            <th fxFlex="20">Phone Number</th>
+            <th fxFlex="20">Email</th>
+            <th fxFlex="20">Start New Rent</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr fxLayout="row">
+            <td fxFlex="20">{{ previouslyCreatedCustomer.firstname}}</td>
+            <td fxFlex="20">{{ previouslyCreatedCustomer.lastname }}</td>
+            <td fxFlex="20">{{ previouslyCreatedCustomer.PhoneNum }}</td>
+            <td fxFlex="20">{{ previouslyCreatedCustomer.email }}</td>
+            <td fxFlex="20">
+              <button mat-raised-button (click)="newRent()">Start</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button (click)="createCustomer()">Create</button>
+  </mat-card-actions>
+</mat-card>

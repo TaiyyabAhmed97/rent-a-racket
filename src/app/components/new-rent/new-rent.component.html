@@ -1,0 +1,32 @@
+<mat-card>
+  <mat-card-header>
+    New Demo Checkout
+  </mat-card-header>
+  <mat-card-content *ngIf="customerService.newRent">
+    <form fxLayout="column">
+      <mat-form-field>
+        <input matInput readonly placeholder="First Name" name="FName" [(ngModel)]='customerService.customer.firstname'>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput readonly placeholder="Last Name" name="Lname" [(ngModel)]='customerService.customer.lastname'>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput readonly placeholder="Phone Number" name="PhoneNumber" [(ngModel)]='customerService.customer.PhoneNum'>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput readonly placeholder="Email" name="Email" [(ngModel)]='customerService.customer.email'>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Make" name="Make" [(ngModel)]='make'>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Model" name="Model" [(ngModel)]='model'>
+      </mat-form-field>
+      <button mat-raised-button (click)="addAnotherRacket()">Add Another Racket</button>
+      {{rackets}}
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button (click)="submitRent()">Rent</button>
+  </mat-card-actions>
+</mat-card>

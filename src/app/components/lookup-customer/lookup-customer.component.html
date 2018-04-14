@@ -1,0 +1,36 @@
+<mat-card>
+	<mat-card-header>
+		Look Up Customer
+	</mat-card-header>
+	<mat-card-content>
+		<form fxLayout="column">
+			<mat-form-field>
+				<input matInput placeholder="Phone Number" name="PhoneNumber" [(ngModel)]='PhoneNumber'>
+			</mat-form-field>
+		</form>
+
+		<div *ngIf="customerFound">
+			<table class="table">
+				<thead>
+					<tr fxLayout="row">
+						<th fxFlex="20">First Name</th>
+						<th fxFlex="20">Last Name</th>
+						<th fxFlex="20">Phone Number</th>
+						<th fxFlex="20">Email</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr fxLayout="row">
+						<td fxFlex="20">{{ customer.firstname}}</td>
+						<td fxFlex="20">{{ customer.lastname }}</td>
+						<td fxFlex="20">{{ customer.PhoneNum }}</td>
+						<td fxFlex="20">{{ customer.email }}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</mat-card-content>
+	<mat-card-actions>
+		<button mat-raised-button (click)="searchForCustomer()">Search</button>
+	</mat-card-actions>
+</mat-card>
