@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CustomerService } from '../../services/customer.service';
 import { Customer } from '../../models/customer';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-new-customer',
@@ -12,7 +13,7 @@ export class NewCustomerComponent implements OnInit {
   previouslyCreatedCustomer: Customer = new Customer();
   customerCreated = false;
 
-  constructor(private customerService: CustomerService) { }
+  constructor(private customerService: CustomerService, private router: Router) { }
 
   ngOnInit() {
     // this.customer = new Customer();
@@ -36,5 +37,6 @@ export class NewCustomerComponent implements OnInit {
   newRent() {
     this.customerService.startNewRent();
     this.customerService.customer = this.previouslyCreatedCustomer;
+    this.router.navigate(['/new-rent', this.previouslyCreatedCustomer._id]);
   }
 }

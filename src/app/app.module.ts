@@ -11,6 +11,7 @@ import { CustomerService } from './services/customer.service';
 import { FlexLayoutModule } from '@angular/flex-layout'
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
+import { GetDemosComponent } from './components/get-demos/get-demos.component';
 
 const appRoutes: Routes = [
   { path: 'new-customer', component: NewCustomerComponent },
@@ -32,7 +33,8 @@ const appRoutes: Routes = [
     AppComponent,
     NewCustomerComponent,
     LookupCustomerComponent,
-    NewRentComponent],
+    NewRentComponent,
+    GetDemosComponent],
   bootstrap: [AppComponent],
   providers: [CustomerService]
 })

@@ -2,19 +2,19 @@
   <mat-card-header>
     New Demo Checkout
   </mat-card-header>
-  <mat-card-content *ngIf="customerService.newRent">
+  <mat-card-content>
     <form fxLayout="column">
       <mat-form-field>
-        <input matInput readonly placeholder="First Name" name="FName" [(ngModel)]='customerService.customer.firstname'>
+        <input matInput readonly placeholder="First Name" name="FName" [(ngModel)]='customer.firstname'>
       </mat-form-field>
       <mat-form-field>
-        <input matInput readonly placeholder="Last Name" name="Lname" [(ngModel)]='customerService.customer.lastname'>
+        <input matInput readonly placeholder="Last Name" name="Lname" [(ngModel)]='customer.lastname'>
       </mat-form-field>
       <mat-form-field>
-        <input matInput readonly placeholder="Phone Number" name="PhoneNumber" [(ngModel)]='customerService.customer.PhoneNum'>
+        <input matInput readonly placeholder="Phone Number" name="PhoneNumber" [(ngModel)]='customer.PhoneNum'>
       </mat-form-field>
       <mat-form-field>
-        <input matInput readonly placeholder="Email" name="Email" [(ngModel)]='customerService.customer.email'>
+        <input matInput readonly placeholder="Email" name="Email" [(ngModel)]='customer.email'>
       </mat-form-field>
       <mat-form-field>
         <input matInput placeholder="Make" name="Make" [(ngModel)]='make'>

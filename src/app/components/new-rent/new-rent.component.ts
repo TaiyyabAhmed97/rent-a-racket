@@ -11,6 +11,7 @@ export class NewRentComponent implements OnInit {
   make: string;
   model: string;
   rackets: Racket[] = [];
+  customer: Customer = new Customer();
   constructor(private customerService: CustomerService) { }
 
   ngOnInit() {
