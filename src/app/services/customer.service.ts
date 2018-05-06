@@ -16,7 +16,11 @@ export class CustomerService {
     return this.http.get('api/' + PhoneNum);
   }
 
-  startNewRent() {
+  searchForCustomerById(id) {
+    return this.http.get('api/c/' + id);
+  }
+
+  startNewRent(Customer) {
 
     this.newRent = true;
 

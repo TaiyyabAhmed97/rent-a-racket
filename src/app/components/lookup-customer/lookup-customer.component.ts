@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CustomerService } from '../../services/customer.service';
 import { Customer } from '../../models/customer';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-lookup-customer',
@@ -11,18 +12,18 @@ export class LookupCustomerComponent implements OnInit {
   PhoneNumber;
   customer: Customer = new Customer();
   previouslyCreatedCustomer: Customer = new Customer();
-  isValid = false;
   customerFound = false;
-  constructor(private customerService: CustomerService) { }
+  constructor(private customerService: CustomerService, private router: Router) { }
 
   ngOnInit() {
   }
 
   searchForCustomer() {
     this.customerService.searchForCustomer(this.PhoneNumber).subscribe(data => {
-      this.isValid = true;
-      this.customerFound = true;
       this.customer = data[0] as Customer;
+      if (this.customer != null) {
+        this.customerFound = true;
+      }
       Object.assign(this.previouslyCreatedCustomer, this.customer);
       this.customer.firstname = "";
       this.customer.lastname = "";
@@ -34,6 +35,11 @@ export class LookupCustomerComponent implements OnInit {
       console.log(err);
     });
 
+  }
+  newRent() {
+    this.customerService.startNewRent(this.customer);
+    this.customerService.customer = this.previouslyCreatedCustomer;
+    this.router.navigate(['/new-rent', this.previouslyCreatedCustomer._id]);
   }
 
 }

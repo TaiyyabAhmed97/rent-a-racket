@@ -12,11 +12,13 @@ import { FlexLayoutModule } from '@angular/flex-layout'
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import { GetDemosComponent } from './components/get-demos/get-demos.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
 const appRoutes: Routes = [
   { path: 'new-customer', component: NewCustomerComponent },
   { path: 'lookup-customer', component: LookupCustomerComponent },
-  { path: 'new-rent', component: NewRentComponent },
+  { path: 'new-rent/', component: NewRentComponent },
+  { path: 'new-rent/:id', component: NewRentComponent },
 ];
 
 @NgModule({

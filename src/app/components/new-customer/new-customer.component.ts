@@ -35,7 +35,7 @@ export class NewCustomerComponent implements OnInit {
   }
 
   newRent() {
-    this.customerService.startNewRent();
+    this.customerService.startNewRent(this.customer);
     this.customerService.customer = this.previouslyCreatedCustomer;
     this.router.navigate(['/new-rent', this.previouslyCreatedCustomer._id]);
   }

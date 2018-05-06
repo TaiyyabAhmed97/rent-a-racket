@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { CustomerService } from '../../services/customer.service';
 import { Customer } from '../../models/customer';
+import { HttpClient } from '@angular/common/http';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-new-rent',
@@ -10,24 +12,37 @@ import { Customer } from '../../models/customer';
 export class NewRentComponent implements OnInit {
   make: string;
   model: string;
+  date: any;
   rackets: Racket[] = [];
   customer: Customer = new Customer();
-  constructor(private customerService: CustomerService) { }
+  constructor(private customerService: CustomerService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.getCustomerDetail(this.route.snapshot.params['id']);
 
+  }
+
+  getCustomerDetail(id) {
+    this.customerService.searchForCustomerById(id).subscribe(data => {
+      this.customer = data as Customer;
+      console.log(data);
+    }, (err) => {
+      console.log(err);
+    }); ``
   }
 
   addAnotherRacket() {
     this.rackets.push(new Racket(this.make, this.model));
     this.make = "";
     this.model = "";
+    console.log(this.rackets);
   }
 
   submitRent() {
     const customerId = this.customerService.customer._id;
     console.log(customerId);
     console.log(this.rackets);
+    console.log(this.date);
     // TODO API Call
     // ON Success
     this.make = "";
