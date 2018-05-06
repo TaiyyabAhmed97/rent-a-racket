@@ -22,7 +22,7 @@ export class CustomerService {
 
   startNewRent(Customer) {
 
-    this.newRent = true;
+    return this.http.post('api/rent', Customer);
 
   }
 }

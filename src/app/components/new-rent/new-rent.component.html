@@ -28,10 +28,17 @@
         <input matInput placeholder="Model" name="Model" [(ngModel)]='model'>
       </mat-form-field>
       <button mat-raised-button (click)="addAnotherRacket()">Add Another Racket</button>
-      {{rackets}}
     </form>
   </mat-card-content>
   <mat-card-actions>
     <button mat-raised-button (click)="submitRent()">Rent</button>
   </mat-card-actions>
+
+  <mat-list #rackets>
+    <label>Currently Added Rackets: {{RacketsArray.length}}</label>
+    <mat-list-item *ngFor="let rackets of RacketsArray">
+      {{rackets}}
+    </mat-list-item>
+  </mat-list>
+
 </mat-card>
