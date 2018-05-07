@@ -1,7 +1,13 @@
-export class CurrentDemo {
-    public CustomerId:string;
-    public Rackets:string [];
-    public CheckedOut:string;
-    public ReturnDate:string;
-  }
-  
+import { Customer } from "./customer";
+
+export interface ICurrentDemo {
+  custid: string,
+  firstname: string,
+  lastname: string,
+  PhoneNum: string,
+  email: string,
+  demoid: string,
+  Rackets: string[],
+  CheckedOut: string,
+  ReturnDate: string
+}
