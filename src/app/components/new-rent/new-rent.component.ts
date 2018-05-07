@@ -34,7 +34,7 @@ export class NewRentComponent implements OnInit {
 
   addAnotherRacket() {
     this.rackets.push(new Racket(this.make, this.model));
-    this.RacketsArray.push(this.make + " " + this.model);
+    this.RacketsArray.push(this.make + " " + this.model + " ");
     this.make = "";
     this.model = "";
     console.log(this.rackets);
@@ -61,6 +61,7 @@ export class NewRentComponent implements OnInit {
     // ON Success
     this.make = ""
     this.model = ""
+    this.router.navigate(['/get-demos']);
   }
 
 

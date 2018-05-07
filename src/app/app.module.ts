@@ -19,6 +19,7 @@ const appRoutes: Routes = [
   { path: 'lookup-customer', component: LookupCustomerComponent },
   { path: 'new-rent/', component: NewRentComponent },
   { path: 'new-rent/:id', component: NewRentComponent },
+  { path: 'get-demos', component: GetDemosComponent }
 ];
 
 @NgModule({
