@@ -19,6 +19,7 @@ export class AppComponent {
     this.navLinks.push(new NavLink("Look Up Customer", "lookup-customer"));
     this.navLinks.push(new NavLink("New Rent", "new-rent"));
     this.navLinks.push(new NavLink("Get Demos", "get-demos"));
+    this.navLinks.push(new NavLink("Get Customers", "get-customers"));
   }
 
 }

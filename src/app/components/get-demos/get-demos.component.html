@@ -1,39 +1,45 @@
-<div class="example-container mat-elevation-z8">
-  <mat-table #table [dataSource]="getDemos()">
+<div fxLayout="row" fxLayoutAlign="center center">
+  <div class="example-container mat-elevation-z8">
+    <mat-table #table [dataSource]="getDemos()">
 
-    <!--- Note that these columns can be defined in any order.
+      <!--- Note that these columns can be defined in any order.
           The actual rendered columns are set as a property on the row definition" -->
 
-    <!-- Position Column -->
-    <ng-container matColumnDef="name">
-      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.firstname}} {{element.lastname}} </mat-cell>
-    </ng-container>
+      <!-- Position Column -->
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.firstname}} {{element.lastname}} </mat-cell>
+      </ng-container>
 
-    <!-- Name Column -->
-    <ng-container matColumnDef="number">
-      <mat-header-cell *matHeaderCellDef> Number </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.PhoneNum}} </mat-cell>
-    </ng-container>
+      <!-- Name Column -->
+      <ng-container matColumnDef="number">
+        <mat-header-cell *matHeaderCellDef> Number </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.PhoneNum}} </mat-cell>
+      </ng-container>
 
-    <!-- Weight Column -->
-    <ng-container matColumnDef="rackets">
-      <mat-header-cell *matHeaderCellDef> Rackets </mat-header-cell>
-      <mat-cell *matCellDef="let element">{{element.Rackets }} </mat-cell>
-    </ng-container>
+      <!-- Weight Column -->
+      <ng-container matColumnDef="rackets">
+        <mat-header-cell *matHeaderCellDef> Rackets </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <mat-list *ngFor="let racket of element.Rackets">
+            <mat-list-item>{{element.Rackets.indexOf(racket)+ 1}}. {{racket}}</mat-list-item>
+          </mat-list>
+        </mat-cell>
+      </ng-container>
 
-    <!-- Symbol Column -->
-    <ng-container matColumnDef="checkedout">
-      <mat-header-cell *matHeaderCellDef> Date Checked Out </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.CheckedOut | date}}</mat-cell>
-    </ng-container>
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="checkedout">
+        <mat-header-cell *matHeaderCellDef> Date Checked Out </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.CheckedOut | date}}</mat-cell>
+      </ng-container>
 
-    <ng-container matColumnDef="returndate">
-      <mat-header-cell *matHeaderCellDef> Return Due On </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.ReturnDate | date}}</mat-cell>
-    </ng-container>
+      <ng-container matColumnDef="returndate">
+        <mat-header-cell *matHeaderCellDef> Return Due On </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.ReturnDate | date}}</mat-cell>
+      </ng-container>
 
-    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-  </mat-table>
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </div>
 </div>

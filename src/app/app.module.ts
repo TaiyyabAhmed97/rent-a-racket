@@ -13,13 +13,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import { GetDemosComponent } from './components/get-demos/get-demos.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { GetCustomersComponent } from './components/get-customers/get-customers.component';
 
 const appRoutes: Routes = [
   { path: 'new-customer', component: NewCustomerComponent },
   { path: 'lookup-customer', component: LookupCustomerComponent },
   { path: 'new-rent/', component: NewRentComponent },
   { path: 'new-rent/:id', component: NewRentComponent },
-  { path: 'get-demos', component: GetDemosComponent }
+  { path: 'get-demos', component: GetDemosComponent },
+  { path: 'get-customers', component: GetCustomersComponent }
 ];
 
 @NgModule({
@@ -37,7 +39,8 @@ const appRoutes: Routes = [
     NewCustomerComponent,
     LookupCustomerComponent,
     NewRentComponent,
-    GetDemosComponent],
+    GetDemosComponent,
+    GetCustomersComponent],
   bootstrap: [AppComponent],
   providers: [CustomerService]
 })

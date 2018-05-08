@@ -24,6 +24,9 @@ export class CustomerService {
   searchForCustomerById(id) {
     return this.http.get('api/c/' + id);
   }
+  getCustomers() {
+    return this.http.get('api/');
+  }
 
   startNewRent(Customer) {
     return this.http.post('api/rent', Customer);

@@ -27,3 +27,7 @@
 .mat-list .mat-list-item{
 color: white;
 }
+.mat-tab-nav-bar{
+  display: flex;
+  justify-content: center;
+}
