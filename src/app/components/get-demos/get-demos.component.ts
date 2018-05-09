@@ -14,7 +14,7 @@ export class GetDemosComponent implements OnInit {
   CurrentDemos;
   temp;
   CurrentDemoFiltered = {};
-  displayedColumns = ['name', 'number', 'rackets', 'checkedout', 'returndate'];
+  displayedColumns = ['name', 'number', 'rackets', 'checkedout', 'returndate', 'status'];
 
   constructor(private customerService: CustomerService, private router: Router) { }
 

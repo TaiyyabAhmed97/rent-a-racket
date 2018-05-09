@@ -10,10 +10,8 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./new-rent.component.css']
 })
 export class NewRentComponent implements OnInit {
-  make: string;
-  model: string;
+  Racket: string;
   date: any;
-  rackets: Racket[] = [];
   RacketsArray = [];
   customer: Customer = new Customer();
   constructor(private customerService: CustomerService, private router: Router, private route: ActivatedRoute) { }
@@ -33,11 +31,8 @@ export class NewRentComponent implements OnInit {
   }
 
   addAnotherRacket() {
-    this.rackets.push(new Racket(this.make, this.model));
-    this.RacketsArray.push(this.make + " " + this.model + " ");
-    this.make = "";
-    this.model = "";
-    console.log(this.rackets);
+    this.RacketsArray.push(this.Racket);
+    this.Racket = "";
   }
 
   submitRent() {
@@ -59,20 +54,7 @@ export class NewRentComponent implements OnInit {
     this.customerService.startNewRent(obj).subscribe(response => { });
     // TODO API Call
     // ON Success
-    this.make = ""
-    this.model = ""
+    this.Racket = "";
     this.router.navigate(['/get-demos']);
-  }
-
-
-
-}
-
-export class Racket {
-  public make: string;
-  public model: string;
-  constructor(make, model) {
-    this.make = make;
-    this.model = model;
   }
 }

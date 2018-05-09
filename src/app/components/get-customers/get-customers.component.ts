@@ -27,4 +27,12 @@ export class GetCustomersComponent implements OnInit {
     return this.Customers;
 
   }
+
+  processNumber(num) {
+    if (num.charAt(0) == "1") {
+      num = num.substring(1, num.length);
+    }
+    let temp = "(" + num.substring(0, 3) + ")" + "-" + num.substring(3, 6) + "-" + num.substring(6, 11);
+    return temp;
+  }
 }

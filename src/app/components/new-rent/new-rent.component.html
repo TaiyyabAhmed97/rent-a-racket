@@ -17,15 +17,12 @@
         <input matInput readonly placeholder="Email" name="Email" [(ngModel)]='customer.email'>
       </mat-form-field>
       <mat-form-field>
-        <input matInput [matDatepicker]="myDatepicker" [(ngModel)]='date' [ngModelOptions]="{standalone: true}">
+        <input matInput placeholder="Return Date" [matDatepicker]="myDatepicker" [(ngModel)]='date' [ngModelOptions]="{standalone: true}">
         <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
         <mat-datepicker #myDatepicker></mat-datepicker>
       </mat-form-field>
       <mat-form-field>
-        <input matInput placeholder="Make" name="Make" [(ngModel)]='make'>
-      </mat-form-field>
-      <mat-form-field>
-        <input matInput placeholder="Model" name="Model" [(ngModel)]='model'>
+        <input matInput placeholder="Racket" name="Racket" [(ngModel)]='Racket'>
       </mat-form-field>
       <button mat-raised-button (click)="addAnotherRacket()">Add Another Racket</button>
     </form>

@@ -19,7 +19,7 @@
     <!-- Weight Column -->
     <ng-container matColumnDef="phonenumber">
       <mat-header-cell *matHeaderCellDef> Phone Number </mat-header-cell>
-      <mat-cell *matCellDef="let element">{{element.PhoneNum }} </mat-cell>
+      <mat-cell *matCellDef="let element">{{processNumber(element.PhoneNum)}} </mat-cell>
     </ng-container>
 
     <!-- Symbol Column -->
