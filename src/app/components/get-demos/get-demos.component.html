@@ -40,7 +40,10 @@
     <ng-container matColumnDef="status">
       <mat-header-cell *matHeaderCellDef> Status </mat-header-cell>
       <mat-cell *matCellDef="let element">
-        <img src="../../../assets/green-checkmark.svg" width="50" height="60" alt="Girl in a jacket"> </mat-cell>
+        <i class="material-icons">
+          hourglass_full
+        </i>
+      </mat-cell>
     </ng-container>
 
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
