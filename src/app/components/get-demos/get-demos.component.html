@@ -37,12 +37,15 @@
       <mat-cell *matCellDef="let element"> {{element.ReturnDate | date}}</mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="status">
-      <mat-header-cell *matHeaderCellDef> Status </mat-header-cell>
+    <ng-container matColumnDef="info">
+      <mat-header-cell *matHeaderCellDef> Info </mat-header-cell>
       <mat-cell *matCellDef="let element">
-        <i class="material-icons">
-          hourglass_full
-        </i>
+        <button mat-button [routerLink]="['/demo-details', element._id]">
+          <i class="material-icons">
+            info
+          </i>
+          Info
+        </button>
       </mat-cell>
     </ng-container>
 

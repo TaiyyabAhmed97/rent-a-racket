@@ -14,6 +14,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { GetDemosComponent } from './components/get-demos/get-demos.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { GetCustomersComponent } from './components/get-customers/get-customers.component';
+import { DemoDetailsComponent } from './components/demo-details/demo-details.component';
 
 const appRoutes: Routes = [
   { path: 'new-customer', component: NewCustomerComponent },
@@ -21,7 +22,8 @@ const appRoutes: Routes = [
   { path: 'new-rent/', component: NewRentComponent },
   { path: 'new-rent/:id', component: NewRentComponent },
   { path: 'get-demos', component: GetDemosComponent },
-  { path: 'get-customers', component: GetCustomersComponent }
+  { path: 'get-customers', component: GetCustomersComponent },
+  { path: 'demo-details', component: DemoDetailsComponent }
 ];
 
 @NgModule({
@@ -40,8 +42,11 @@ const appRoutes: Routes = [
     LookupCustomerComponent,
     NewRentComponent,
     GetDemosComponent,
-    GetCustomersComponent],
+    GetCustomersComponent,
+    DemoDetailsComponent],
   bootstrap: [AppComponent],
-  providers: [CustomerService]
+  providers: [
+    CustomerService
+  ]
 })
 export class AppModule { }

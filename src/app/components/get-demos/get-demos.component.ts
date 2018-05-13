@@ -14,12 +14,17 @@ export class GetDemosComponent implements OnInit {
   CurrentDemos;
   temp;
   CurrentDemoFiltered = {};
-  displayedColumns = ['name', 'number', 'rackets', 'checkedout', 'returndate', 'status'];
+  displayedColumns = ['name', 'number', 'rackets', 'checkedout', 'returndate', 'info'];
 
-  constructor(private customerService: CustomerService, private router: Router) { }
+  constructor(private customerService: CustomerService,
+    private router: Router) { }
 
   ngOnInit() {
-    this.customerService.getCurrentDemos().subscribe(data => { this.temp = data; console.log(this.temp); }, error => console.log(error), () => console.log("finsi"));
+    this.customerService.getCurrentDemos().subscribe(data => {
+      this.temp = data; console.log(this.temp);
+    },
+      error => console.log(error),
+      () => console.log("finsi"));
   }
 
 
@@ -27,6 +32,10 @@ export class GetDemosComponent implements OnInit {
     this.CurrentDemos = new MatTableDataSource(this.temp);
     console.log(this.CurrentDemos);
     return this.CurrentDemos;
+
+  }
+
+  showInfo() {
 
   }
 

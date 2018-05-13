@@ -1,7 +1,6 @@
 /* Add application styles & imports to this file! */
 
-@import "~@angular/material/prebuilt-themes/purple-green.css";
-@import './custom-theme';
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
 
 .container {
   display: flex;
