@@ -1,3 +1,47 @@
-<p>
-  demo-details works!
-</p>
+<mat-card>
+  <mat-card-header>
+    Demo Checkout Details
+  </mat-card-header>
+  <div *ngIf="getCust()">
+    <mat-card-content>
+      <form fxLayout="column">
+        <mat-form-field>
+          <input matInput readonly placeholder="First Name" name="FName" [(ngModel)]='CurrentDemo.firstname'>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput readonly placeholder="Last Name" name="Lname" [(ngModel)]='CurrentDemo.lastname'>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput readonly placeholder="Phone Number" name="PhoneNumber" [(ngModel)]='CurrentDemo.PhoneNum'>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput readonly placeholder="Email" name="Email" [(ngModel)]='CurrentDemo.email'>
+        </mat-form-field>
+
+
+        <mat-list #rackets>
+          <label>Rackets</label>
+          <mat-list-item *ngFor="let rackets of CurrentDemo.Rackets">
+            {{CurrentDemo.Rackets.indexOf(rackets)+ 1}}. {{rackets}}
+          </mat-list-item>
+        </mat-list>
+
+
+        <mat-form-field>
+          <input matInput readonly placeholder="Checked Out On" name="Checked Out On" [ngModel]='CurrentDemo.CheckedOut | date'>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput readonly placeholder="Due On" name="Due On" [ngModel]="CurrentDemo.ReturnDate | date">
+        </mat-form-field>
+      </form>
+    </mat-card-content>
+    <div fxLayout="row">
+      <mat-card-actions>
+        <button fxFlex="50" mat-raised-button (click)="submitRent()">Return Demo</button>
+        <button fxFlex="50" mat-raised-button (click)="submitRent()">Send a Text</button>
+        <button fxFlex="50" mat-raised-button (click)="submitRent()">Delete Record</button>
+      </mat-card-actions>
+    </div>
+
+  </div>
+</mat-card>

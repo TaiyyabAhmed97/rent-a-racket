@@ -1,8 +1,8 @@
+import { ICurrentDemo } from './../models/currentdemo';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Customer } from '../models/customer';
 import { MatTableDataSource } from '@angular/material';
-import { ICurrentDemo } from '../models/currentdemo';
 import { Observable } from 'rxjs/Observable';
 
 @Injectable()
@@ -31,7 +31,9 @@ export class CustomerService {
   startNewRent(Customer) {
     return this.http.post('api/rent', Customer);
   }
-
+  getSpecificDemo(id): Observable<ICurrentDemo> {
+    return this.http.get<ICurrentDemo>('api/rent/modified/' + id);
+  }
   getCurrentDemos(): Observable<ICurrentDemo[]> {
     return this.http.get<ICurrentDemo[]>('api/rent/modified');
   }

@@ -40,7 +40,7 @@
     <ng-container matColumnDef="info">
       <mat-header-cell *matHeaderCellDef> Info </mat-header-cell>
       <mat-cell *matCellDef="let element">
-        <button mat-button [routerLink]="['/demo-details', element._id]">
+        <button mat-button [routerLink]="['/demo-details/', element.demoid]">
           <i class="material-icons">
             info
           </i>

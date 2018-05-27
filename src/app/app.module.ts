@@ -23,7 +23,7 @@ const appRoutes: Routes = [
   { path: 'new-rent/:id', component: NewRentComponent },
   { path: 'get-demos', component: GetDemosComponent },
   { path: 'get-customers', component: GetCustomersComponent },
-  { path: 'demo-details', component: DemoDetailsComponent }
+  { path: 'demo-details/:id', component: DemoDetailsComponent }
 ];
 
 @NgModule({
