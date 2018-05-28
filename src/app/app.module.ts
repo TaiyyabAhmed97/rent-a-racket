@@ -15,6 +15,7 @@ import { GetDemosComponent } from './components/get-demos/get-demos.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { GetCustomersComponent } from './components/get-customers/get-customers.component';
 import { DemoDetailsComponent } from './components/demo-details/demo-details.component';
+import { DemoDetailDialogComponent } from './components/demo-detail-dialog/demo-detail-dialog.component';
 
 const appRoutes: Routes = [
   { path: 'new-customer', component: NewCustomerComponent },
@@ -36,6 +37,9 @@ const appRoutes: Routes = [
     HttpClientModule,
     RouterModule.forRoot(appRoutes)
   ],
+  entryComponents: [
+    DemoDetailDialogComponent
+  ],
   declarations: [
     AppComponent,
     NewCustomerComponent,
@@ -43,7 +47,8 @@ const appRoutes: Routes = [
     NewRentComponent,
     GetDemosComponent,
     GetCustomersComponent,
-    DemoDetailsComponent],
+    DemoDetailsComponent,
+    DemoDetailDialogComponent],
   bootstrap: [AppComponent],
   providers: [
     CustomerService
