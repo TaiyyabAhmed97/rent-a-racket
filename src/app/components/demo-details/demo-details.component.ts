@@ -12,6 +12,7 @@ import { DemoDetailDialogComponent } from '../demo-detail-dialog/demo-detail-dia
 export class DemoDetailsComponent implements OnInit {
   CurrentDemo;
   temp;
+  Demo;
   customerFound = false;
   message: String;
   constructor(private customerService: CustomerService, private router: Router, private route: ActivatedRoute, private dialog: MatDialog) { }
@@ -24,6 +25,13 @@ export class DemoDetailsComponent implements OnInit {
     },
       error => console.log(error),
       () => console.log("finish"));
+
+    this.customerService.getDemo(this.route.snapshot.params['id']).subscribe(data => {
+      this.Demo = data;
+      console.log(this.Demo);
+    },
+      error => console.log(error),
+      () => console.log("gotted"));
   }
 
   openDialog(): void {
@@ -45,12 +53,24 @@ export class DemoDetailsComponent implements OnInit {
     return this.CurrentDemo;
   }
 
-  sendText() {
-
+  submitRent() {
+    this.Demo.Returned = true;
+    this.customerService.submitDemo(this.CurrentDemo.demoid, this.Demo).subscribe(
+      data => {
+        console.log('finished');
+        this.router.navigate(['/get-demos']);
+      }
+    )
   }
 
   deleteRent() {
+    this.customerService.deleteRent(this.CurrentDemo.demoid).subscribe(
+      data => {
+        console.log('deleted');
+        this.router.navigate(['/get-demos']);
+      }
 
+    )
   }
 
 }

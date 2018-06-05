@@ -27,7 +27,12 @@ export class CustomerService {
   getCustomers() {
     return this.http.get('api/');
   }
-
+  deleteRent(id) {
+    return this.http.delete('api/rent' + id)
+  }
+  getDemo(id) {
+    return this.http.get('api/rent' + id);
+  }
   startNewRent(Customer) {
     return this.http.post('api/rent', Customer);
   }
@@ -36,5 +41,8 @@ export class CustomerService {
   }
   getCurrentDemos(): Observable<ICurrentDemo[]> {
     return this.http.get<ICurrentDemo[]>('api/rent/modified');
+  }
+  submitDemo(id, demo) {
+    return this.http.put('api/rent' + id, demo);
   }
 }
