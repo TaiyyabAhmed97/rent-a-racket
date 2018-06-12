@@ -36,7 +36,7 @@ export class DemoDetailsComponent implements OnInit {
 
   openDialog(): void {
     let dialogRef = this.dialog.open(DemoDetailDialogComponent, {
-      width: '250px',
+      width: '500px',
       data: { name: this.CurrentDemo.firstname, message: this.message }
     });
 

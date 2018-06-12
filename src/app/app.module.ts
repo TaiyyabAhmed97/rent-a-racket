@@ -16,6 +16,8 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { GetCustomersComponent } from './components/get-customers/get-customers.component';
 import { DemoDetailsComponent } from './components/demo-details/demo-details.component';
 import { DemoDetailDialogComponent } from './components/demo-detail-dialog/demo-detail-dialog.component';
+import { GetDemosDialogComponent } from './components/get-demos-dialog/get-demos-dialog.component';
+import { AutosizeModule } from 'ngx-autosize';
 
 const appRoutes: Routes = [
   { path: 'new-customer', component: NewCustomerComponent },
@@ -35,10 +37,12 @@ const appRoutes: Routes = [
     MaterialModule,
     FlexLayoutModule,
     HttpClientModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    AutosizeModule
   ],
   entryComponents: [
-    DemoDetailDialogComponent
+    DemoDetailDialogComponent,
+    GetDemosDialogComponent
   ],
   declarations: [
     AppComponent,
@@ -48,7 +52,8 @@ const appRoutes: Routes = [
     GetDemosComponent,
     GetCustomersComponent,
     DemoDetailsComponent,
-    DemoDetailDialogComponent],
+    DemoDetailDialogComponent,
+    GetDemosDialogComponent],
   bootstrap: [AppComponent],
   providers: [
     CustomerService

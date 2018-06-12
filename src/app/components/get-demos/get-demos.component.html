@@ -46,6 +46,11 @@
           </i>
           Info
         </button>
+        <button mat-button matTooltip="Send a Preset Message to {{element.firstname}}" (click)="openDialog(element.firstname, element.CheckedOut, element.ReturnDate, element.Rackets)">
+          <i class="material-icons">
+            chat
+          </i>
+        </button>
       </mat-cell>
     </ng-container>
 
