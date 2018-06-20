@@ -14,11 +14,11 @@ export class CustomerService {
   constructor(private http: HttpClient) { }
 
   createCustomer(Customer) {
-    return this.http.post('https://3000-dot-4031203-dot-devshell.appspot.com', Customer);
+    return this.http.post('https://3000-dot-4031203-dot-devshell.appspot.com/', Customer);
   }
 
   searchForCustomer(PhoneNum) {
-    return this.http.get('https://3000-dot-4031203-dot-devshell.appspot.com' + PhoneNum);
+    return this.http.get('https://3000-dot-4031203-dot-devshell.appspot.com/' + PhoneNum);
   }
 
   searchForCustomerById(id) {
