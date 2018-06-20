@@ -14,35 +14,35 @@ export class CustomerService {
   constructor(private http: HttpClient) { }
 
   createCustomer(Customer) {
-    return this.http.post('https://3000-dot-4031203-dot-devshell.appspot.com/', Customer);
+    return this.http.post('http://localhost:3000/', Customer);
   }
 
   searchForCustomer(PhoneNum) {
-    return this.http.get('https://3000-dot-4031203-dot-devshell.appspot.com/' + PhoneNum);
+    return this.http.get('http://localhost:3000//' + PhoneNum);
   }
 
   searchForCustomerById(id) {
-    return this.http.get('https://3000-dot-4031203-dot-devshell.appspot.com/c/' + id);
+    return this.http.get('http://localhost:3000//c/' + id);
   }
   getCustomers() {
-    return this.http.get('https://3000-dot-4031203-dot-devshell.appspot.com/');
+    return this.http.get('http://localhost:3000//');
   }
   deleteRent(id) {
-    return this.http.delete('https://3000-dot-4031203-dot-devshell.appspot.com/rent' + id)
+    return this.http.delete('http://localhost:3000/' + id)
   }
   getDemo(id) {
-    return this.http.get('https://3000-dot-4031203-dot-devshell.appspot.com/rent' + id);
+    return this.http.get('http://localhost:3000/rent' + id);
   }
   startNewRent(Customer) {
-    return this.http.post('https://3000-dot-4031203-dot-devshell.appspot.com/rent', Customer);
+    return this.http.post('http://localhost:3000/rent', Customer);
   }
   getSpecificDemo(id): Observable<ICurrentDemo> {
-    return this.http.get<ICurrentDemo>('https://3000-dot-4031203-dot-devshell.appspot.com/rent/modified/' + id);
+    return this.http.get<ICurrentDemo>('http://localhost:3000/rent/modified/' + id);
   }
   getCurrentDemos(): Observable<ICurrentDemo[]> {
-    return this.http.get<ICurrentDemo[]>('https://3000-dot-4031203-dot-devshell.appspot.com/rent/modified');
+    return this.http.get<ICurrentDemo[]>('http://localhost:3000/rent/modified');
   }
   submitDemo(id, demo) {
-    return this.http.put('https://3000-dot-4031203-dot-devshell.appspot.com/rent' + id, demo);
+    return this.http.put('http://localhost:3000/rent' + id, demo);
   }
 }
