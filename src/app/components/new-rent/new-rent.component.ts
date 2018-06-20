@@ -14,7 +14,7 @@ export class NewRentComponent implements OnInit {
   date: any;
   RacketsArray = [];
   customer: Customer = new Customer();
-  constructor(private customerService: CustomerService, private router: Router, private route: ActivatedRoute) { }
+  constructor(public customerService: CustomerService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.getCustomerDetail(this.route.snapshot.params['id']);
