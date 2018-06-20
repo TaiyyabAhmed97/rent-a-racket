@@ -18,14 +18,14 @@ export class CustomerService {
   }
 
   searchForCustomer(PhoneNum) {
-    return this.http.get('http://localhost:3000//' + PhoneNum);
+    return this.http.get('http://localhost:3000/' + PhoneNum);
   }
 
   searchForCustomerById(id) {
-    return this.http.get('http://localhost:3000//c/' + id);
+    return this.http.get('http://localhost:3000/c/' + id);
   }
   getCustomers() {
-    return this.http.get('http://localhost:3000//');
+    return this.http.get('http://localhost:3000/');
   }
   deleteRent(id) {
     return this.http.delete('http://localhost:3000/' + id)
