@@ -25,7 +25,7 @@ export class CustomerService {
     return this.http.get('http://localhost:3000/c/' + id);
   }
   getCustomers() {
-    return this.http.get('http://localhost:3000/');
+    return this.http.get('http://localhost:3000/all');
   }
   deleteRent(id) {
     return this.http.delete('http://localhost:3000/' + id)
