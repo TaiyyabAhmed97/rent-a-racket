@@ -45,4 +45,8 @@ export class CustomerService {
   submitDemo(id, demo) {
     return this.http.put('http://localhost:3000/rent' + id, demo);
   }
+  textCustomer(messageAndNum) {
+    console.log("coolio");
+    return this.http.post('http://localhost:3000/text', messageAndNum);
+  }
 }

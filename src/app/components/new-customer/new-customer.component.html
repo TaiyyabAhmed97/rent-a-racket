@@ -11,7 +11,8 @@
         <input matInput placeholder="Last Name" name="Lname" [(ngModel)]='customer.lastname'>
       </mat-form-field>
       <mat-form-field>
-        <input matInput placeholder="Phone Number" name="PhoneNumber" [(ngModel)]='customer.PhoneNum'>
+        <span matPrefix>+1 &nbsp;</span>
+        <input type="tel" matInput placeholder="Phone Number" name="PhoneNumber" [(ngModel)]='customer.PhoneNum'>
       </mat-form-field>
       <mat-form-field>
         <input matInput placeholder="Email" name="Email" [(ngModel)]='customer.email'>
@@ -34,7 +35,7 @@
             <td fxFlex="20">{{ previouslyCreatedCustomer.lastname }}</td>
             <td fxFlex="20">{{ previouslyCreatedCustomer.PhoneNum }}</td>
             <td fxFlex="20">{{ previouslyCreatedCustomer.email }}</td>
-            <td fxFlex="20">
+            <td fxFlex="90">
               <button mat-raised-button (click)="newRent()">Start</button>
             </td>
           </tr>

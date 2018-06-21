@@ -40,16 +40,18 @@ export class GetDemosComponent implements OnInit {
   }
 
 
-  openDialog(name, datein, dateout, rackets): void {
+  openDialog(name, datein, dateout, rackets, phonenum): void {
+    this.CurrentDemoFiltered['phonenum'] = phonenum;
     let dialogRef = this.dialog.open(GetDemosDialogComponent, {
       width: '250px',
-      data: { name: name, datein: datein, dateout: dateout, message: this.message, rackets: rackets }
+      data: { name: name, datein: datein, dateout: dateout, message: this.message, rackets: rackets, phonenum: phonenum }
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
-      //this.message = result;
-      console.log(result);
+      this.CurrentDemoFiltered['message'] = result;
+      this.customerService.textCustomer(this.CurrentDemoFiltered).subscribe(data => console.log("here"));
+      //console.log(this.CurrentDemoFiltered);
     });
   }
 
