@@ -18,6 +18,7 @@ import { DemoDetailsComponent } from './components/demo-details/demo-details.com
 import { DemoDetailDialogComponent } from './components/demo-detail-dialog/demo-detail-dialog.component';
 import { GetDemosDialogComponent } from './components/get-demos-dialog/get-demos-dialog.component';
 import { AutosizeModule } from 'ngx-autosize';
+import { DemoHistoryComponent } from './components/demo-history/demo-history.component';
 
 const appRoutes: Routes = [
   { path: 'new-customer', component: NewCustomerComponent },
@@ -26,7 +27,8 @@ const appRoutes: Routes = [
   { path: 'new-rent/:id', component: NewRentComponent },
   { path: 'get-demos', component: GetDemosComponent },
   { path: 'get-customers', component: GetCustomersComponent },
-  { path: 'demo-details/:id', component: DemoDetailsComponent }
+  { path: 'demo-details/:id', component: DemoDetailsComponent },
+  { path: 'demo-history/:id', component: DemoHistoryComponent }
 ];
 
 @NgModule({
@@ -53,7 +55,8 @@ const appRoutes: Routes = [
     GetCustomersComponent,
     DemoDetailsComponent,
     DemoDetailDialogComponent,
-    GetDemosDialogComponent],
+    GetDemosDialogComponent,
+    DemoHistoryComponent],
   bootstrap: [AppComponent],
   providers: [
     CustomerService
