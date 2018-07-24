@@ -14,42 +14,42 @@ export class CustomerService {
   constructor(private http: HttpClient) { }
 
   createCustomer(Customer) {
-    return this.http.post('http://localhost:3000/', Customer);
+    return this.http.post('api/', Customer);
   }
 
   searchForCustomer(PhoneNum) {
-    return this.http.get('http://localhost:3000/' + PhoneNum);
+    return this.http.get('api/' + PhoneNum);
   }
 
   searchForCustomerById(id) {
-    return this.http.get('http://localhost:3000/c/' + id);
+    return this.http.get('api/c/' + id);
   }
   getCustomers() {
-    return this.http.get('http://localhost:3000/all');
+    return this.http.get('api/all');
   }
   deleteRent(id) {
-    return this.http.delete('http://localhost:3000/' + id)
+    return this.http.delete('api/' + id)
   }
   getDemo(id) {
-    return this.http.get('http://localhost:3000/rent' + id);
+    return this.http.get('api/rent' + id);
   }
   startNewRent(Customer) {
-    return this.http.post('http://localhost:3000/rent', Customer);
+    return this.http.post('api/rent', Customer);
   }
   getCustHist(id) {
-    return this.http.get('http://localhost:3000/history/' + id);
+    return this.http.get('api/history/' + id);
   }
   getSpecificDemo(id): Observable<ICurrentDemo> {
-    return this.http.get<ICurrentDemo>('http://localhost:3000/rent/modified/' + id);
+    return this.http.get<ICurrentDemo>('api/rent/modified/' + id);
   }
   getCurrentDemos(): Observable<ICurrentDemo[]> {
-    return this.http.get<ICurrentDemo[]>('http://localhost:3000/rent/modified');
+    return this.http.get<ICurrentDemo[]>('api/rent/modified');
   }
   submitDemo(id, demo) {
-    return this.http.put('http://localhost:3000/rent' + id, demo);
+    return this.http.put('api/rent' + id, demo);
   }
   textCustomer(messageAndNum) {
     console.log("coolio");
-    return this.http.post('http://localhost:3000/text', messageAndNum);
+    return this.http.post('api/text', messageAndNum);
   }
 }
